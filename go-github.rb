@@ -10,7 +10,7 @@ class GoGithub < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/linuxuserin/go-github/releases/download/v0.1.0/go-github_0.1.0_Darwin_arm64.tar.gz"
-      sha256 "8297d909487d3e74dd515d54bf8e9c41aa19aff8a64cb099ae4caa0137c15938"
+      sha256 "520c0873fa3faaea26f16106b4cd6aa1c20178b0ee238905821ec60250535f2b"
 
       def install
         bin.install "go-github"
@@ -18,7 +18,7 @@ class GoGithub < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/linuxuserin/go-github/releases/download/v0.1.0/go-github_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "8cb8931a3d1aab6bc3b41f5b5269ba02417cbcfbac85b0ba7bea77dc3d16c19d"
+      sha256 "01e55418eefae89ff713268f9b31dee2e0916947cdec7fa62e99d2bc1eaebd3b"
 
       def install
         bin.install "go-github"
@@ -27,17 +27,17 @@ class GoGithub < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/linuxuserin/go-github/releases/download/v0.1.0/go-github_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "886d8ff97364fb0f9b28bce56623df2f0d5a6ed3b280570484bbfd735b2716b2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/linuxuserin/go-github/releases/download/v0.1.0/go-github_0.1.0_Linux_arm64.tar.gz"
+      sha256 "dec867060a893826dc3a398aee0d02b1156f11c44ce123d7882be76e3cc47a18"
 
       def install
         bin.install "go-github"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/linuxuserin/go-github/releases/download/v0.1.0/go-github_0.1.0_Linux_arm64.tar.gz"
-      sha256 "4b7d55c1d3d8833f9b408d15d11ae03af9d231558b016a542d25e5d151ee0425"
+    if Hardware::CPU.intel?
+      url "https://github.com/linuxuserin/go-github/releases/download/v0.1.0/go-github_0.1.0_Linux_x86_64.tar.gz"
+      sha256 "ecb49901a907fff1942304741a08fb65df2bafc3a0f492a823c3a180b1678502"
 
       def install
         bin.install "go-github"
